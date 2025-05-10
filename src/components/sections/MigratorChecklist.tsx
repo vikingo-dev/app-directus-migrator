@@ -18,7 +18,7 @@ const MIGRATION_ITEMS: { key: MigrationItem; message: string }[] = [
 
 const MigratorChecklist = () => {
   const { isConnect, migrationsCheck, setMigrationsCheck } = useGeneralStore();
-  const [processing, setProcessing] = useState(true)
+  const [processing, setProcessing] = useState(false)
 
   // Seleccionar o deseleccionar todos
   const handleToggleAll = () => {
