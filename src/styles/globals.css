@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@import "./bg.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/secondary.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mono';
+  src: url('/fonts/primary.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Mono', 'system-ui', 'sans-serif';
+  --font-mono: 'Inter', 'system-ui', 'sans-serif';
+}
+
+@layer utilities {
+  .CardGlass {
+    @apply bg-gray-900/40 backdrop-blur-md border border-gray-800 rounded-lg px-6 py-4;
+  }
+
+  input {
+    @apply bg-transparent border border-gray-600 rounded-lg px-8 py-3 text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:border-white;
+  }
+
+  input:focus {
+    @apply border-white;
+  }
+
+  input:disabled {
+    @apply bg-gray-200/20 cursor-not-allowed opacity-50;
+  }
+
+  button {
+    @apply cursor-pointer bg-violet-600 hover:bg-violet-800 hover:scale-105 rounded-lg px-5 py-3 transition-all duration-200;
+  }
+
+  button:disabled {
+    @apply bg-gray-500 cursor-not-allowed opacity-50;
+  }
+
+  button.outlined {
+    @apply cursor-pointer border-2 border-violet-600 hover:border-violet-800 bg-violet-200/10 text-violet-500 hover:bg-violet-400/30;
+  }
+
+  button.small {
+    @apply px-3 py-2;
+
+  }
+
+  hr {
+    @apply border-violet-600/40 border;
+  }
+}
+
+@components {
+  body {
+    @apply font-sans;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+p {
+  margin-block: 1em;
+  margin-block: 1lh;
+}
